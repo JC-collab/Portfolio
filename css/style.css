@@ -1,0 +1,276 @@
+/* CSS Reset  - we are going to clear out the default marging and padding*/
+
+* {
+    margin: 0;
+    padding: 0;
+    /* To make sure the padding does not add to the width of the box */
+    box-sizing: border-box;
+}
+
+
+/* Main Stylin (Body, core elements, links, heading, paragraph.  Any major element which does not have an id or class */
+
+html,
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7em;
+}
+
+
+/* Links, by default to have a specific color unless a class is specified.*/
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+
+/* Headings, specing undernith  */
+
+h1,
+h2,
+h3 {
+    padding-bottom: 20px;
+}
+
+
+/* With reset we took paragraph margin (which is active by default) we want to add some margin on paragraph only - marging: top/bottom l/r */
+
+p {
+    margin: 10px 0;
+}
+
+
+/* Utility classes*/
+
+.container {
+    margin-right: auto;
+    max-width: 1100px;
+    overflow: auto;
+    padding: 0 20px;
+}
+
+
+/* We npw move to the actual NavBar */
+
+#navbar {
+    background: #333;
+    color: white;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+
+/* Next we would align "Julio Casablanca" to the left and the navbar to the right - we will use float for that */
+
+#navbar h1 {
+    float: left;
+    padding-top: 20px;
+}
+
+
+/* Float the UL to the right */
+
+#navbar ul {
+    list-style: none;
+    float: right;
+}
+
+
+/* Listed items within UL - Horizontal, then anything we sty;e (on each work it will be done on the a tag - insight*/
+
+#navbar ul li {
+    float: left;
+}
+
+#navbar ul li a {
+    display: block;
+    margin-right: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+
+/* We would like to add a hover effect using a psudo selector */
+
+#navbar ul li a:hover,
+#navbar ul li a.current {
+    background: #444;
+    color: burlywood;
+}
+
+
+/* Show case style */
+
+#showcase {
+    background: url(../img/BackGroundBanner-2.jpg) no-repeat center center/cover;
+    height: 600px;
+    margin: auto;
+}
+
+#showcase .showcase-content {
+    color: white;
+    text-align: center;
+    padding-top: 80px;
+}
+
+
+/* #showcase .container .showcase-content image {
+    width: 75px;
+    height: 100px;
+} */
+
+
+/* I used some extra css styling to help me visualize nested box - and float.*/
+
+#showcase .container .showcase-content h1 {
+    width: 500px;
+    margin-left: 40px;
+}
+
+#showcase .container {
+    margin: 0;
+    border: 0;
+    width: 600px;
+    height: 600px;
+    float: left;
+}
+
+#showcase .container .internal-container {
+    margin: 0 auto;
+    padding: 5px;
+    width: 600px;
+    height: 500px;
+    float: left;
+}
+
+#showcase .internal-container {
+    color: white;
+    text-align: center;
+    padding-top: 80px;
+}
+
+#showcase .internal-container img {
+    max-height: 400px;
+    border-radius: 50%;
+}
+
+#showcase .separator {
+    color: red;
+}
+
+#showcase .lower-text {
+    margin-top: 100px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+#showcase .lower-text .info {
+    font-size: 50px;
+    font-weight: 600px;
+}
+
+#showcase .lower-text p {
+    font-size: 25px;
+    line-height: 1.5;
+    text-align: left;
+}
+
+#showcase .divider-line {
+    height: 2px;
+    background-color: black;
+    margin-left: 35px;
+    margin-right: 35px;
+}
+
+#showcase .second-divider-line {
+    height: 2px;
+    background-color: black;
+    margin-left: 0px;
+    margin-right: 35px;
+}
+
+#showcase .skills {
+    margin-top: 50px;
+    margin-left: 40px;
+}
+
+#showcase .skills p {
+    font-weight: 600;
+    font-size: 25px;
+}
+
+#showcase .skills-containers {
+    font-weight: 600;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+}
+
+#showcase .skills-containers .skills-html {
+    width: 25%;
+    background-color: grey;
+}
+
+#showcase .skills-containers .skills-css {
+    width: 25%;
+    background-color: blue;
+}
+
+#showcase .skills-containers .skills-js {
+    width: 35%;
+    background-color: red;
+}
+
+#showcase .skills p {
+    font-size: 25px;
+    line-height: 1.5;
+    text-align: left;
+}
+
+
+/* reactive */
+
+
+/* the bottom oart of the page will have a light gray backgrown, the intent is to practice HTML-reactive skills, for tablet it should change to light green, then light red*/
+
+#showcase .skills .lower-third p {
+    background-color: rgb(161, 161, 161);
+}
+
+
+/* Tablet Style*/
+
+@media only screen and (min-width:401px) and (max-width: 960px) {
+    #showcase {
+        background: url(../img/BackGroundBanner-2.jpg) no-repeat center center/cover;
+        height: 1200px;
+        margin: auto;
+    }
+    #showcase .lower-text {
+        margin-top: 200px;
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+    #showcase .skills .lower-third p {
+        background-color: rgb(181, 231, 181);
+    }
+}
+
+@media only screen and (max-width:400px) {
+    #showcase {
+        background: url(../img/BackGroundBanner-2.jpg) no-repeat center center/cover;
+        height: 1500px;
+        margin: auto;
+    }
+    #showcase .lower-text .info {
+        font-size: 20px;
+        font-weight: 400px;
+        line-height: .5px;
+    }
+    #showcase .skills .lower-third p {
+        background-color: rgb(236, 181, 181);
+    }
+}

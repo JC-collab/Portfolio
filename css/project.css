@@ -1,0 +1,163 @@
+/* CSS Reset  - we are going to clear out the default marging and padding*/
+
+* {
+    margin: 0;
+    padding: 0;
+    /* To make sure the padding does not add to the width of the box */
+    box-sizing: border-box;
+}
+
+
+/* Main Stylin (Body, core elements, links, heading, paragraph.  Any major element which does not have an id or class */
+
+html,
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7em;
+}
+
+
+/* Links, by default to have a specific color unless a class is specified.*/
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+
+/* Headings, specing undernith  */
+
+h1,
+h2,
+h3 {
+    padding-bottom: 20px;
+}
+
+
+/* With reset we took paragraph margin (which is active by default) we want to add some margin on paragraph only - marging: top/bottom l/r */
+
+p {
+    margin: 10px 0;
+}
+
+
+/* Utility classes*/
+
+.container {
+    margin-right: auto;
+    max-width: 1100px;
+    overflow: auto;
+    padding: 0 20px;
+}
+
+
+/* We npw move to the actual NavBar */
+
+#navbar {
+    background: #333;
+    color: white;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+
+/* Next we would align "Julio Casablanca" to the left and the navbar to the right - we will use float for that */
+
+#navbar h1 {
+    float: left;
+    padding-top: 20px;
+}
+
+
+/* Float the UL to the right */
+
+#navbar ul {
+    list-style: none;
+    float: right;
+}
+
+
+/* Listed items within UL - Horizontal, then anything we sty;e (on each work it will be done on the a tag - insight*/
+
+#navbar ul li {
+    float: left;
+}
+
+#navbar ul li a {
+    display: block;
+    margin-right: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+
+/* We would like to add a hover effect using a psudo selector */
+
+#navbar ul li a:hover,
+#navbar ul li a.current {
+    background: #444;
+    color: burlywood;
+}
+
+
+/* Show case style */
+
+#showcase {
+    background: url(../img/projects.png) no-repeat center center/cover;
+    height: 400px;
+    margin: auto;
+}
+
+
+/* I used some extra css styling to help me visualize nested box - and float.*/
+
+.divider-line {
+    height: 2px;
+    background-color: black;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+}
+
+.firstProject img {
+    border-radius: 8px;
+    max-height: 300px;
+    margin-top: 100px;
+    margin-left: 300px;
+    padding: 0;
+    float: left;
+}
+
+
+/* reactive */
+
+
+/* Tablet Style*/
+
+@media only screen and (min-width:401px) and (max-width: 960px) {
+    #showcase {
+        background: url(../img/BackGroundBanner-2.jpg) no-repeat center center/cover;
+        height: 1200px;
+        margin: auto;
+    }
+    #showcase .lower-text {
+        margin-top: 200px;
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+}
+
+@media only screen and (max-width:400px) {
+    #showcase {
+        background: url(../img/BackGroundBanner-2.jpg) no-repeat center center/cover;
+        height: 1500px;
+        margin: auto;
+    }
+    #showcase .lower-text .info {
+        font-size: 20px;
+        font-weight: 400px;
+        line-height: .5px;
+    }
+}
